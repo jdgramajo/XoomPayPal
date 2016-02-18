@@ -14,7 +14,13 @@ public class XoomPayPal {
 	}
 
 	public static void main(String[] vargs) {
-		if(vargs.length == 0 || vargs.length > 1 || Integer.valueOf(vargs[0]) < 1) {
+        int number;
+        try {
+            number = Integer.valueOf(vargs[0]);
+        } catch (Exception e) {
+            number = 0;
+        }
+		if(number < 1) {
 			System.out.println("Usage: java -jar build/jar/XoomPayPal.jar [int > 0]");
 			return;
 		}
